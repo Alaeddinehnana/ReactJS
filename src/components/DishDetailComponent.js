@@ -89,9 +89,8 @@ function RenderComments({comments}) {
            <div className='row'>
              <RenderDish dish={props.dish} />
              <RenderComments comments={props.comments} />
-             <div className="row">
-               <CommentForm
-               />
+             <div>
+               <CommentForm/>
              </div>
            </div>
            </div>
@@ -117,6 +116,11 @@ class CommentForm extends Component {
     this.setState({
       isModalOpen: !this.state.isModalOpen
     });
+  }
+
+  handleSubmit(values) {
+    console.log("Current State is: " + JSON.stringify(values));
+    alert("Current State is: " + JSON.stringify(values));
   }
 
   render() {
